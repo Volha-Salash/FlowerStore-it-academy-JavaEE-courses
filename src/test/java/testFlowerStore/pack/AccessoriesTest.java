@@ -1,22 +1,23 @@
-package testFlowerStore.accesories;
+package testFlowerStore.pack;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import smallflowerstore.modal.bouquet.Bouquet;
-import smallflowerstore.modal.bouquet.Packaging;
-import smallflowerstore.modal.enums.Color;
-import smallflowerstore.modal.enums.FlowerType;
-import smallflowerstore.modal.enums.StemSize;
-import smallflowerstore.modal.flower.Flower;
-import smallflowerstore.modal.flower.Thing;
-import smallflowerstore.modal.pack.DecorativePaper;
-import smallflowerstore.modal.pack.Ribbon;
+import smallflowerstore.model.ProductFlowersStore;
+import smallflowerstore.model.bouquet.Packaging;
+import smallflowerstore.model.enums.Color;
+import smallflowerstore.model.enums.FlowerType;
+import smallflowerstore.model.enums.StemSize;
+import smallflowerstore.model.flower.Flower;
+import smallflowerstore.model.pack.DecorativePaper;
+import smallflowerstore.model.pack.Ribbon;
+import smallflowerstore.service.Bouquet;
 
 public class AccessoriesTest {
 
-    Thing flower, bouquet;
+    ProductFlowersStore flower;
+    ProductFlowersStore bouquet;
 
     @BeforeEach
     void setUp() {

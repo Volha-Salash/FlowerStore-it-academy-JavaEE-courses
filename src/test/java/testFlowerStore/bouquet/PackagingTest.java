@@ -4,11 +4,12 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import smallflowerstore.modal.bouquet.Packaging;
-import smallflowerstore.modal.enums.Color;
-import smallflowerstore.modal.enums.FlowerType;
-import smallflowerstore.modal.enums.StemSize;
-import smallflowerstore.modal.flower.Flower;
+import smallflowerstore.model.bouquet.Packaging;
+import smallflowerstore.model.enums.Color;
+import smallflowerstore.model.enums.FlowerType;
+import smallflowerstore.model.enums.StemSize;
+import smallflowerstore.model.flower.Flower;
+
 
 public class PackagingTest {
     Packaging pack;
@@ -25,7 +26,7 @@ public class PackagingTest {
     void getPrice() {
         Assertions.assertEquals(36.5, pack.getPrice());
         peony.setPrice(4.0);
-        Assertions.assertEquals(20, pack.getPrice());
+        Assertions.assertEquals(20.0, pack.getPrice());
     }
 
     @Test

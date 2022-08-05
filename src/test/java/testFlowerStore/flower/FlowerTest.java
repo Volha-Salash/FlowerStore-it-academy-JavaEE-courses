@@ -4,10 +4,12 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import smallflowerstore.modal.enums.Color;
-import smallflowerstore.modal.enums.FlowerType;
-import smallflowerstore.modal.enums.StemSize;
-import smallflowerstore.modal.flower.Flower;
+import smallflowerstore.model.enums.Color;
+import smallflowerstore.model.enums.FlowerType;
+import smallflowerstore.model.enums.StemSize;
+import smallflowerstore.model.flower.Flower;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class FlowerTest {
     Flower flower;

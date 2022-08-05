@@ -1,22 +1,21 @@
-package smallflowerstore.modal.bouquet;
+package smallflowerstore.model.bouquet;
 
 import lombok.Getter;
-import smallflowerstore.modal.enums.Color;
-import smallflowerstore.modal.enums.FlowerType;
-import smallflowerstore.modal.enums.StemSize;
-import smallflowerstore.modal.flower.Flower;
+import smallflowerstore.model.enums.Color;
+import smallflowerstore.model.enums.FlowerType;
+import smallflowerstore.model.enums.StemSize;
+import smallflowerstore.model.flower.Flower;
 
 import java.util.Locale;
 
 @Getter
 public class Packaging {
 
-    private Flower flower;
-    private int amount;
+    private final Flower flower;
+    private final int amount;
 
     public Packaging(Flower flower, int amount) {
         this.flower = flower;
-        assert (amount > 0);
         this.amount = amount;
     }
 

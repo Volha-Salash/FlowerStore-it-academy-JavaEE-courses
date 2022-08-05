@@ -1,16 +1,18 @@
-package smallflowerstore.modal.flower;
+package smallflowerstore.model.flower;
 
 import lombok.Getter;
 import lombok.Setter;
-import smallflowerstore.modal.enums.Color;
-import smallflowerstore.modal.enums.FlowerType;
-import smallflowerstore.modal.enums.StemSize;
+import smallflowerstore.model.ProductFlowersStore;
+import smallflowerstore.model.enums.Color;
+import smallflowerstore.model.enums.FlowerType;
+import smallflowerstore.model.enums.StemSize;
 
 import java.util.Locale;
 
 @Getter
 @Setter
-public class Flower extends Thing {
+
+public class Flower extends ProductFlowersStore {
 
     private FlowerType type;
     private Color color;
@@ -26,6 +28,7 @@ public class Flower extends Thing {
         this.isFresh = isFresh;
         changeTitle();
     }
+
 
     @Override
     public double price() {
@@ -47,5 +50,4 @@ public class Flower extends Thing {
         String title = color + " " + type;
         return title.charAt(0) + title.toLowerCase(Locale.ROOT).substring(1);
     }
-
 }

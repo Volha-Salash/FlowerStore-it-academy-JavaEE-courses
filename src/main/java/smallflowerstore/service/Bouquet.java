@@ -1,22 +1,27 @@
-package smallflowerstore.modal.bouquet;
+package smallflowerstore.service;
 
 import lombok.Getter;
-import smallflowerstore.modal.enums.Color;
-import smallflowerstore.modal.enums.FlowerType;
-import smallflowerstore.modal.enums.StemSize;
-import smallflowerstore.modal.flower.Flower;
-import smallflowerstore.modal.flower.Thing;
-import smallflowerstore.service.CreatorOfBouquets;
+import lombok.Setter;
+import smallflowerstore.model.interfaces.CreatorOfBouquets;
+import smallflowerstore.model.ProductFlowersStore;
+import smallflowerstore.model.bouquet.Packaging;
+import smallflowerstore.model.enums.Color;
+import smallflowerstore.model.enums.FlowerType;
+import smallflowerstore.model.enums.StemSize;
+import smallflowerstore.model.flower.Flower;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+
+import static smallflowerstore.model.enums.StemSize.*;
 
 
 @Getter
-public class Bouquet extends Thing implements CreatorOfBouquets {
-    private final HashSet<Packaging> packagings;
+@Setter
+public class Bouquet extends ProductFlowersStore implements CreatorOfBouquets {
+    private final Set<Packaging> packagings;
     private List<Flower> flowers = new ArrayList<Flower>();
 
     /**
@@ -30,7 +35,6 @@ public class Bouquet extends Thing implements CreatorOfBouquets {
 
     /**
      * Bouquet
-     * <p>
      * Add new flower`s to pack
      *
      * @param pack - new flower`s pack
@@ -43,8 +47,8 @@ public class Bouquet extends Thing implements CreatorOfBouquets {
     }
 
     @Override
-    public HashSet<Color> getColors() {
-        HashSet<Color> colors = new HashSet<>();
+    public Set<Color> getColors() {
+        Set<Color> colors = new HashSet<>();
         for (Packaging pack : packagings) {
             colors.add(pack.getColor());
         }
@@ -52,8 +56,8 @@ public class Bouquet extends Thing implements CreatorOfBouquets {
     }
 
     @Override
-    public HashSet<FlowerType> getTypes() {
-        HashSet<FlowerType> types = new HashSet<>();
+    public Set<FlowerType> getTypes() {
+        Set<FlowerType> types = new HashSet<>();
         for (Packaging pack : packagings) {
             types.add(pack.getType());
         }
@@ -61,8 +65,8 @@ public class Bouquet extends Thing implements CreatorOfBouquets {
     }
 
     @Override
-    public HashSet<StemSize> getStemSize() {
-        HashSet<StemSize> stemSizes = new HashSet<>();
+    public Set<StemSize> getStemSize() {
+        Set<StemSize> stemSizes = new HashSet<>();
         for (Packaging flower : packagings) {
             stemSizes.add(flower.getStemSize());
         }
@@ -78,7 +82,7 @@ public class Bouquet extends Thing implements CreatorOfBouquets {
 
     @Override
     public boolean rangeFlowers(FlowerType[] wantedTypes) {
-        HashSet<FlowerType> repositoryTypes = getTypes();
+        Set<FlowerType> repositoryTypes = getTypes();
         if (wantedTypes == null) {
             return true;
         }
@@ -99,7 +103,7 @@ public class Bouquet extends Thing implements CreatorOfBouquets {
 
     @Override
     public boolean rangeColors(Color[] wantedColors) {
-        HashSet<Color> repositoryColors = getColors();
+        Set<Color> repositoryColors = getColors();
         if (wantedColors == null) {
             return true;
         }
@@ -119,7 +123,7 @@ public class Bouquet extends Thing implements CreatorOfBouquets {
      */
     @Override
     public boolean rangeStemSize(StemSize[] wantedStemSize) {
-        HashSet<StemSize> repositoryStemSize = getStemSize();
+        Set<StemSize> repositoryStemSize = getStemSize();
         if (wantedStemSize == null) {
             return true;
         }
@@ -132,11 +136,10 @@ public class Bouquet extends Thing implements CreatorOfBouquets {
     }
 
 
-    @Override
-    public List<Flower> getFilteredSteamFlowersList(int minSteamSize, int maxSteamSize) {
+    public List<Flower> getFilteredSteamFlowersList(StemSize min, StemSize max) {
         List<Flower> result = new ArrayList<Flower>();
         for (Flower flower : flowers) {
-            if (flower.getStemSize() > minSteamSize && flower.getStemSize() < maxSteamSize) {
+            if (flower.getStemSize() == SHORT || flower.getStemSize() == MIDDLE || flower.getStemSize() == LONG) {
                 result.add(flower);
             }
 
@@ -144,24 +147,12 @@ public class Bouquet extends Thing implements CreatorOfBouquets {
         return result;
     }
 
-    @Override
-    public void getFilterStemSize(Bouquet bouquet) {
-        int minStemSize = 35;
-        int maxStemSize = 70;
-        List<Flower> flowerSteam = bouquet.getFilteredSteamFlowersList(minStemSize, maxStemSize);
-        for (int i = 0; i < flowerSteam.size(); i++) {
-            System.out.println(flowerSteam.get(i));
 
-        }
-    }
+    public void getFilterSteamSize(Bouquet bouquet) {
+        List<Flower> flowerSteam = bouquet.getFilteredSteamFlowersList(SHORT, LONG); // minStemSize = SHORT = 35sm; maxStemSize = LONG = 70sm;
+        for (Flower flower : flowerSteam) {
+            System.out.println(flower);
 
-    @Override
-    public void getFreshFlowers(Bouquet bouquet) {
-        List<Flower> flowers = bouquet.getFlowers();
-        Collections.sort(flowers);
-
-        for (int i = 0; i < flowers.size(); i++) {
-            System.out.print(flowers.get(i) + "\n");
         }
     }
 

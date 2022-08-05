@@ -1,9 +1,8 @@
-package smallflowerstore.modal.enums;
+package smallflowerstore.model.enums;
 
 public enum FlowerType {
     ROSE("Rose"),
     PEONY("Peony"),
-    CHRYSANTHEMUM("Chrysanthemum"),
     HYDRANGEA("Hydrangea");
 
     private String title;

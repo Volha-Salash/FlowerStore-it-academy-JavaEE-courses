@@ -1,4 +1,4 @@
-package smallflowerstore.modal.enums;
+package smallflowerstore.model.enums;
 
 public enum Color {
 
