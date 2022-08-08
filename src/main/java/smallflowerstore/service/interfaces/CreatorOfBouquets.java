@@ -1,7 +1,6 @@
-package smallflowerstore.model.interfaces;
+package smallflowerstore.service.interfaces;
 
 
-import smallflowerstore.model.bouquet.Packaging;
 import smallflowerstore.model.enums.Color;
 import smallflowerstore.model.enums.FlowerType;
 import smallflowerstore.model.enums.StemSize;
@@ -10,13 +9,6 @@ import java.util.Set;
 
 public interface CreatorOfBouquets {
 
-    void addPackaging(Packaging pack);
-
-    Set<Color> getColors();
-
-    Set<FlowerType> getTypes();
-
-    Set<StemSize> getStemSize();
 
     boolean rangeFlowers(FlowerType[] wantedTypes);
 
@@ -28,4 +20,9 @@ public interface CreatorOfBouquets {
 
     double price();
 
+    Set<Color> getColors();
+
+    Set<FlowerType> getTypes();
+
+    Set<StemSize> getStemSize();
 }

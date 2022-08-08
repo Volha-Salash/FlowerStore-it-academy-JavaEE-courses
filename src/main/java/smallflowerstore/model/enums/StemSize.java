@@ -5,16 +5,16 @@ public enum StemSize {
     MIDDLE(45),
     LONG(70);
 
-    private int stemSize;
+    private final int steamSize;
 
     StemSize(int stemSize) {
-        this.stemSize = stemSize;
+        this.steamSize = stemSize;
     }
 
     @Override
     public String toString() {
-        return "StemSize{" +
-                "stemSize=" + stemSize +
+        return "SteamSize{" +
+                "steamSize=" + steamSize +
                 '}';
     }
 }

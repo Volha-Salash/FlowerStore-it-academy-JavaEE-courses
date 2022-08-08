@@ -11,7 +11,7 @@ import smallflowerstore.model.flower.Flower;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class FlowerTest {
+class FlowerTest {
     Flower flower;
 
     @BeforeEach
@@ -21,7 +21,7 @@ public class FlowerTest {
 
     @Test
     @DisplayName("assertEquals getPrice")
-    void getPrice() {
+    void getPriceTest() {
         Assertions.assertEquals(7.30, flower.getPrice());
         flower.setPrice(8.7);
         Assertions.assertEquals(8.7, flower.getPrice());
@@ -29,7 +29,7 @@ public class FlowerTest {
 
     @Test
     @DisplayName("assertEquals getStemSize")
-    void getStemSize() {
+    void getStemSizeTest() {
         Assertions.assertEquals(StemSize.MIDDLE, flower.getStemSize());
         flower.setStemSize(StemSize.LONG);
         Assertions.assertEquals(StemSize.LONG, flower.getStemSize());
@@ -37,14 +37,14 @@ public class FlowerTest {
 
     @Test
     @DisplayName("assertEquals getColor")
-    void getColor() {
+    void getColorTest() {
         flower.setColor(Color.PINK);
         Assertions.assertEquals(Color.PINK, flower.getColor());
     }
 
     @Test
     @DisplayName("assertEquals getType")
-    void getType() {
+    void getTypeTest() {
         assertEquals(FlowerType.PEONY, flower.getType());
         flower.setType(FlowerType.HYDRANGEA);
         assertEquals(FlowerType.HYDRANGEA, flower.getType());
@@ -52,7 +52,7 @@ public class FlowerTest {
 
     @Test
     @DisplayName("assertTrue isFresh")
-    public void test_isFresh() {
+    void isFreshTest() {
         boolean isFresh = true;
         Assertions.assertTrue(isFresh);
     }

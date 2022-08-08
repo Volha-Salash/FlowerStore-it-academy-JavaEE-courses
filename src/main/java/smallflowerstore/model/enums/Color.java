@@ -8,7 +8,7 @@ public enum Color {
     WHITE("White"),
     PINK("Pink");
 
-    private String title;
+    private final String title;
 
     Color(String title) {
         this.title = title;

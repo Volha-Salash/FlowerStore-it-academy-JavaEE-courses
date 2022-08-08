@@ -5,16 +5,16 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import smallflowerstore.model.ProductFlowersStore;
-import smallflowerstore.model.bouquet.Packaging;
+import smallflowerstore.model.shop.Packaging;
 import smallflowerstore.model.enums.Color;
 import smallflowerstore.model.enums.FlowerType;
 import smallflowerstore.model.enums.StemSize;
 import smallflowerstore.model.flower.Flower;
 import smallflowerstore.model.pack.DecorativePaper;
 import smallflowerstore.model.pack.Ribbon;
-import smallflowerstore.service.Bouquet;
+import smallflowerstore.service.BouquetService;
 
-public class AccessoriesTest {
+class AccessoriesTest {
 
     ProductFlowersStore flower;
     ProductFlowersStore bouquet;
@@ -23,13 +23,13 @@ public class AccessoriesTest {
     void setUp() {
 
         flower = new Flower(FlowerType.PEONY, Color.PINK, 7.30, StemSize.MIDDLE, true);
-        bouquet = new Bouquet();
-        ((Bouquet) bouquet).addPackaging(new Packaging((Flower) flower, 7));
+        bouquet = new BouquetService();
+        ((BouquetService) bouquet).addPackaging(new Packaging((Flower) flower, 7));
     }
 
     @Test
     @DisplayName("assertEquals getTitle")
-    void getTitle() {
+    void getTitleTest() {
 
         Assertions.assertEquals("Pink peony", flower.getTitle());
         flower = new DecorativePaper(flower);
@@ -44,7 +44,7 @@ public class AccessoriesTest {
 
     @Test
     @DisplayName("assertEquals price")
-    void price() {
+    void priceTest() {
 
         Assertions.assertEquals(7.30, flower.price());
         flower = new DecorativePaper(flower);                   // price 7.0

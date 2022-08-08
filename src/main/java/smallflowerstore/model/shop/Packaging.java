@@ -1,6 +1,7 @@
-package smallflowerstore.model.bouquet;
+package smallflowerstore.model.shop;
 
 import lombok.Getter;
+import org.jetbrains.annotations.NotNull;
 import smallflowerstore.model.enums.Color;
 import smallflowerstore.model.enums.FlowerType;
 import smallflowerstore.model.enums.StemSize;
@@ -10,11 +11,11 @@ import java.util.Locale;
 
 @Getter
 public class Packaging {
-
+    @NotNull
     private final Flower flower;
     private final int amount;
 
-    public Packaging(Flower flower, int amount) {
+    public Packaging(@NotNull Flower flower, int amount) {
         this.flower = flower;
         this.amount = amount;
     }

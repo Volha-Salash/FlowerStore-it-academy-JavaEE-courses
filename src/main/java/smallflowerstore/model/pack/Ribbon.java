@@ -3,6 +3,7 @@ package smallflowerstore.model.pack;
 import smallflowerstore.model.ProductFlowersStore;
 
 public class Ribbon extends Accessories {
+
     public Ribbon(ProductFlowersStore productFlowersStore) {
         super(productFlowersStore);
     }

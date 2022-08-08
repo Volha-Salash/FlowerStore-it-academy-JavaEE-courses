@@ -2,16 +2,15 @@ package smallflowerstore.service;
 
 import lombok.Getter;
 import lombok.Setter;
-import smallflowerstore.model.interfaces.CreatorOfBouquets;
-import smallflowerstore.model.ProductFlowersStore;
-import smallflowerstore.model.bouquet.Packaging;
 import smallflowerstore.model.enums.Color;
 import smallflowerstore.model.enums.FlowerType;
 import smallflowerstore.model.enums.StemSize;
 import smallflowerstore.model.flower.Flower;
+import smallflowerstore.model.shop.Bouquet;
+import smallflowerstore.model.shop.Packaging;
+import smallflowerstore.service.interfaces.CreatorOfBouquets;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -20,59 +19,7 @@ import static smallflowerstore.model.enums.StemSize.*;
 
 @Getter
 @Setter
-public class Bouquet extends ProductFlowersStore implements CreatorOfBouquets {
-    private final Set<Packaging> packagings;
-    private List<Flower> flowers = new ArrayList<Flower>();
-
-    /**
-     * Create new Bouquet
-     */
-    public Bouquet() {
-        super();
-        this.packagings = new HashSet<>();
-        changeTitle();
-    }
-
-    /**
-     * Bouquet
-     * Add new flower`s to pack
-     *
-     * @param pack - new flower`s pack
-     */
-
-    @Override
-    public void addPackaging(Packaging pack) {
-        packagings.add(pack);
-        changeTitle();
-    }
-
-    @Override
-    public Set<Color> getColors() {
-        Set<Color> colors = new HashSet<>();
-        for (Packaging pack : packagings) {
-            colors.add(pack.getColor());
-        }
-        return colors;
-    }
-
-    @Override
-    public Set<FlowerType> getTypes() {
-        Set<FlowerType> types = new HashSet<>();
-        for (Packaging pack : packagings) {
-            types.add(pack.getType());
-        }
-        return types;
-    }
-
-    @Override
-    public Set<StemSize> getStemSize() {
-        Set<StemSize> stemSizes = new HashSet<>();
-        for (Packaging flower : packagings) {
-            stemSizes.add(flower.getStemSize());
-        }
-        return stemSizes;
-    }
-
+public class BouquetService extends Bouquet implements CreatorOfBouquets {
     /**
      * Verify if Bouquet has flowers of all needed types
      *
@@ -118,7 +65,7 @@ public class Bouquet extends ProductFlowersStore implements CreatorOfBouquets {
     /**
      * Sort flowers by lenght/Size
      *
-     * @param - list of wanted Size of stem
+     * @param wantedStemSize - list of wanted Size of stem
      * @return true is satisfies criteria, false otherwise
      */
     @Override
@@ -136,9 +83,9 @@ public class Bouquet extends ProductFlowersStore implements CreatorOfBouquets {
     }
 
 
-    public List<Flower> getFilteredSteamFlowersList(StemSize min, StemSize max) {
-        List<Flower> result = new ArrayList<Flower>();
-        for (Flower flower : flowers) {
+    public List<Flower> getFilteredSteamFlowersList(StemSize SHORT, StemSize LONG) {
+        List<Flower> result = new ArrayList<>();
+        for (Flower flower : getFlowers()) {
             if (flower.getStemSize() == SHORT || flower.getStemSize() == MIDDLE || flower.getStemSize() == LONG) {
                 result.add(flower);
             }
@@ -148,8 +95,8 @@ public class Bouquet extends ProductFlowersStore implements CreatorOfBouquets {
     }
 
 
-    public void getFilterSteamSize(Bouquet bouquet) {
-        List<Flower> flowerSteam = bouquet.getFilteredSteamFlowersList(SHORT, LONG); // minStemSize = SHORT = 35sm; maxStemSize = LONG = 70sm;
+    public void getFilterSteamSize(BouquetService bouquetService) {
+        List<Flower> flowerSteam = bouquetService.getFilteredSteamFlowersList(SHORT, LONG);
         for (Flower flower : flowerSteam) {
             System.out.println(flower);
 
@@ -172,23 +119,10 @@ public class Bouquet extends ProductFlowersStore implements CreatorOfBouquets {
     @Override
     public double price() {
         double price = 0.0;
-        for (Packaging pack : packagings) {
+        for (Packaging pack : getPackagings()) {
             price += pack.getPrice();
         }
         return price;
-    }
-
-    @Override
-    public String toString() {
-        String title = "Bouquet of flower`s ";
-        if (packagings == null || packagings.isEmpty()) {
-            title += "without flowers";
-        } else {
-            String packs = getPackagings().toString();
-            packs = packs.substring(1, packs.length() - 1);
-            title += packs;
-        }
-        return title;
     }
 
 }

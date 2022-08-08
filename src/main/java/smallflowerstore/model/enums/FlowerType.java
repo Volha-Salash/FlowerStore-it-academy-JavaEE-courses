@@ -5,7 +5,7 @@ public enum FlowerType {
     PEONY("Peony"),
     HYDRANGEA("Hydrangea");
 
-    private String title;
+    private final String title;
 
 
     FlowerType(String title) {
