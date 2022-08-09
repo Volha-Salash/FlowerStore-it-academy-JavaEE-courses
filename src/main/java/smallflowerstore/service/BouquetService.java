@@ -19,7 +19,8 @@ import static smallflowerstore.model.enums.StemSize.*;
 
 @Getter
 @Setter
-public class BouquetService extends Bouquet implements CreatorOfBouquets {
+public class BouquetService implements CreatorOfBouquets {
+
     /**
      * Verify if Bouquet has flowers of all needed types
      *
@@ -83,9 +84,9 @@ public class BouquetService extends Bouquet implements CreatorOfBouquets {
     }
 
 
-    public List<Flower> getFilteredSteamFlowersList(StemSize SHORT, StemSize LONG) {
+    public List<Flower> getFilteredSteamFlowersList(Bouquet bouquet) {
         List<Flower> result = new ArrayList<>();
-        for (Flower flower : getFlowers()) {
+        for (Flower flower : bouquet.getFlowers()) {
             if (flower.getStemSize() == SHORT || flower.getStemSize() == MIDDLE || flower.getStemSize() == LONG) {
                 result.add(flower);
             }
@@ -95,8 +96,8 @@ public class BouquetService extends Bouquet implements CreatorOfBouquets {
     }
 
 
-    public void getFilterSteamSize(BouquetService bouquetService) {
-        List<Flower> flowerSteam = bouquetService.getFilteredSteamFlowersList(SHORT, LONG);
+    public void getFilterSteamSize(Bouquet bouquet) {
+        List<Flower> flowerSteam = getFilteredSteamFlowersList(bouquet);
         for (Flower flower : flowerSteam) {
             System.out.println(flower);
 
@@ -112,17 +113,32 @@ public class BouquetService extends Bouquet implements CreatorOfBouquets {
      */
     @Override
     public boolean rangePrice(double minPrice, double maxPrice) {
-        double price = price();
+        double price = price(new Bouquet());
         return minPrice <= price && price <= maxPrice;
     }
 
     @Override
-    public double price() {
+    public double price(Bouquet bouquet) {
         double price = 0.0;
-        for (Packaging pack : getPackagings()) {
+        for (Packaging pack : bouquet.getPackagings()) {
             price += pack.getPrice();
         }
         return price;
+    }
+
+    @Override
+    public Set<Color> getColors() {
+        return null;
+    }
+
+    @Override
+    public Set<FlowerType> getTypes() {
+        return null;
+    }
+
+    @Override
+    public Set<StemSize> getStemSize() {
+        return null;
     }
 
 }

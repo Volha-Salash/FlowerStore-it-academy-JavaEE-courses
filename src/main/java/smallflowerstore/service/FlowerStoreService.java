@@ -16,7 +16,8 @@ import java.util.Set;
 
 @Getter
 @Setter
-public class FlowerStoreService extends FlowerStore {
+public class FlowerStoreService {
+    private FlowerStore flowerStore = new FlowerStore();
     /**
      * Search bouquets by specified criteria
      *
@@ -29,7 +30,7 @@ public class FlowerStoreService extends FlowerStore {
      */
     public Set<BouquetService> assortment(double minPrice, double maxPrice, Color[] colors, FlowerType[] flowers, StemSize[] stemSizes) {
         Set<BouquetService> filterBouquetServices = new HashSet<>();
-        for (BouquetService bouquetService : getBouquetServices()) {
+        for (BouquetService bouquetService : flowerStore.getBouquetServices()) {
             if (bouquetService.rangePrice(minPrice, maxPrice) && bouquetService.rangeColors(colors)
                     && bouquetService.rangeFlowers(flowers) && bouquetService.rangeStemSize(stemSizes)) {
                 filterBouquetServices.add(bouquetService);

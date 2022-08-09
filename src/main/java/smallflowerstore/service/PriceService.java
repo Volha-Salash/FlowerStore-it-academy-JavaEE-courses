@@ -8,12 +8,13 @@ import smallflowerstore.service.interfaces.Cost;
 
 @Getter
 @Setter
-public class PriceService extends Price implements Cost {
+public class PriceService implements Cost {
+    private Price price = new Price();
 
     @Override
     public double calculateTotalPrice() {
         double totalPrice = 0.0;
-        for (ProductFlowersStore orderProductFlowersStore : getProductFlowersStores()) {
+        for (ProductFlowersStore orderProductFlowersStore : price.getProductFlowersStores()) {
             totalPrice += orderProductFlowersStore.price();
         }
         return totalPrice;
