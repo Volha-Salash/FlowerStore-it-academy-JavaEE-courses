@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0b1e1e3d-8a59-4321-85be-623798739509" name="Changes" comment="fixed services, model" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_COMMON_BRANCH" value="FlowerStore_4Upd" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2D6uyB4EQXOEadCfB0E3susiH4H" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../123" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.38362464" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager">
+    <configuration name="FlowerStoreServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="it-academy-JavaEE-courses" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testflowerstore.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testFlowerStore.service" />
+      <option name="MAIN_CLASS_NAME" value="testflowerstore.service.FlowerStoreServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FlowerStoreServiceTest.rangeByTypeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="it-academy-JavaEE-courses" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testflowerstore.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testFlowerStore.service" />
+      <option name="MAIN_CLASS_NAME" value="testflowerstore.service.FlowerStoreServiceTest" />
+      <option name="METHOD_NAME" value="rangeByTypeTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PriceServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="it-academy-JavaEE-courses" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testflowerstore.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testFlowerStore.service" />
+      <option name="MAIN_CLASS_NAME" value="testflowerstore.service.PriceServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PriceServiceTest.calculateTotalPriceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="it-academy-JavaEE-courses" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testflowerstore.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testFlowerStore.service" />
+      <option name="MAIN_CLASS_NAME" value="testflowerstore.service.PriceServiceTest" />
+      <option name="METHOD_NAME" value="calculateTotalPriceTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testflowerstore in it-academy-JavaEE-courses" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="it-academy-JavaEE-courses" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testflowerstore.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testflowerstore" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.testflowerstore in it-academy-JavaEE-courses" />
+        <item itemvalue="JUnit.PriceServiceTest.calculateTotalPriceTest" />
+        <item itemvalue="JUnit.PriceServiceTest" />
+        <item itemvalue="JUnit.FlowerStoreServiceTest" />
+        <item itemvalue="JUnit.FlowerStoreServiceTest.rangeByTypeTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0b1e1e3d-8a59-4321-85be-623798739509" name="Changes" comment="" />
+      <created>1660032109309</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1660032109309</updated>
+    </task>
+    <task id="LOCAL-00001" summary="fixed services, model">
+      <created>1661434848624</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1661434848624</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fixed services, model" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed services, model" />
+  </component>
+</project>
