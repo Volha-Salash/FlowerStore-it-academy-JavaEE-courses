@@ -41,17 +41,17 @@
     <property name="project.structure.side.proportion" value="0.38362464" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.testFlowerStore in it-academy-JavaEE-courses">
     <configuration name="FlowerStoreServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="it-academy-JavaEE-courses" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="testflowerstore.service.*" />
+          <option name="PATTERN" value="testFlowerStore.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="testFlowerStore.service" />
-      <option name="MAIN_CLASS_NAME" value="testflowerstore.service.FlowerStoreServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="testFlowerStore.service.FlowerStoreServiceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -61,12 +61,12 @@
       <module name="it-academy-JavaEE-courses" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="testflowerstore.service.*" />
+          <option name="PATTERN" value="testFlowerStore.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="testFlowerStore.service" />
-      <option name="MAIN_CLASS_NAME" value="testflowerstore.service.FlowerStoreServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="testFlowerStore.service.FlowerStoreServiceTest" />
       <option name="METHOD_NAME" value="rangeByTypeTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -77,12 +77,12 @@
       <module name="it-academy-JavaEE-courses" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="testflowerstore.service.*" />
+          <option name="PATTERN" value="testFlowerStore.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="testFlowerStore.service" />
-      <option name="MAIN_CLASS_NAME" value="testflowerstore.service.PriceServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="testFlowerStore.service.PriceServiceTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -92,27 +92,27 @@
       <module name="it-academy-JavaEE-courses" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="testflowerstore.*" />
+          <option name="PATTERN" value="testFlowerStore.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="testFlowerStore.service" />
-      <option name="MAIN_CLASS_NAME" value="testflowerstore.service.PriceServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="testFlowerStore.service.PriceServiceTest" />
       <option name="METHOD_NAME" value="calculateTotalPriceTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="testflowerstore in it-academy-JavaEE-courses" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="testFlowerStore in it-academy-JavaEE-courses" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="it-academy-JavaEE-courses" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="testflowerstore.*" />
+          <option name="PATTERN" value="testFlowerStore.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="testflowerstore" />
+      <option name="PACKAGE_NAME" value="testFlowerStore" />
       <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -120,7 +120,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.testflowerstore in it-academy-JavaEE-courses" />
+        <item itemvalue="JUnit.testFlowerStore in it-academy-JavaEE-courses" />
         <item itemvalue="JUnit.PriceServiceTest.calculateTotalPriceTest" />
         <item itemvalue="JUnit.PriceServiceTest" />
         <item itemvalue="JUnit.FlowerStoreServiceTest" />
