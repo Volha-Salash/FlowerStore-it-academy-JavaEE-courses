@@ -12,7 +12,7 @@ public class PriceService implements Cost {
     private Price price = new Price();
 
     @Override
-    public double calculateTotalPrice() {
+    public double calculateTotalPrice(ProductFlowersStore productFlowersStore) {
         double totalPrice = 0.0;
         for (ProductFlowersStore orderProductFlowersStore : price.getProductFlowersStores()) {
             totalPrice += orderProductFlowersStore.price();
@@ -20,5 +20,8 @@ public class PriceService implements Cost {
         return totalPrice;
     }
 
+    public Price getPrice() {
+        return price;
+    }
 }
 

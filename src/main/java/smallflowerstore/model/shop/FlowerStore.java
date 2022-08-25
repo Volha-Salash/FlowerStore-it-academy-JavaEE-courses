@@ -1,24 +1,23 @@
 package smallflowerstore.model.shop;
 
 import org.jetbrains.annotations.NotNull;
-import smallflowerstore.service.BouquetService;
 
 import java.util.HashSet;
 import java.util.Set;
 
 public class FlowerStore {
     @NotNull
-    private final Set<BouquetService> bouquetServices;
+    private final Set<Bouquet> bouquets;
 
     public FlowerStore() {
-        bouquetServices = new HashSet<>();
+        bouquets = new HashSet<>();
     }
 
-    public @NotNull Set<BouquetService> getBouquetServices() {
-        return bouquetServices;
+    public @NotNull Set<Bouquet> getBouquets() {
+        return bouquets;
     }
 
-    public void addBouquet(BouquetService bouquetService) {
-        bouquetServices.add(bouquetService);
+    public void addBouquet(Bouquet bouquet) {
+        bouquets.add(bouquet);
     }
 }

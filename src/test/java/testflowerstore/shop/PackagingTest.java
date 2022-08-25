@@ -1,14 +1,14 @@
-package testFlowerStore.shop;
+package testflowerstore.shop;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import smallflowerstore.model.shop.Packaging;
 import smallflowerstore.model.enums.Color;
 import smallflowerstore.model.enums.FlowerType;
 import smallflowerstore.model.enums.StemSize;
 import smallflowerstore.model.flower.Flower;
+import smallflowerstore.model.shop.Packaging;
 
 
 class PackagingTest {

@@ -3,6 +3,7 @@ package smallflowerstore.model.pack;
 import smallflowerstore.model.ProductFlowersStore;
 
 public class DecorativePaper extends Accessories {
+    private static final double price = 7;
 
     public DecorativePaper(ProductFlowersStore productFlowersStore) {
         super(productFlowersStore);
@@ -10,7 +11,7 @@ public class DecorativePaper extends Accessories {
 
     @Override
     public double price() {
-        return super.price() + 7;
+        return price;
     }
 
     @Override

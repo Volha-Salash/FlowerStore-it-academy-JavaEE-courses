@@ -2,9 +2,11 @@ package smallflowerstore.service;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.jetbrains.annotations.NotNull;
 import smallflowerstore.model.enums.Color;
 import smallflowerstore.model.enums.FlowerType;
 import smallflowerstore.model.enums.StemSize;
+import smallflowerstore.model.shop.Bouquet;
 import smallflowerstore.model.shop.FlowerStore;
 
 import java.util.HashSet;
@@ -18,6 +20,7 @@ import java.util.Set;
 @Setter
 public class FlowerStoreService {
     private FlowerStore flowerStore = new FlowerStore();
+
     /**
      * Search bouquets by specified criteria
      *
@@ -28,42 +31,55 @@ public class FlowerStoreService {
      * @param stemSizes - size of flowers stem which must be in bouquet
      * @return HashSet of bouquets that meet the criteria
      */
-    public Set<BouquetService> assortment(double minPrice, double maxPrice, Color[] colors, FlowerType[] flowers, StemSize[] stemSizes) {
-        Set<BouquetService> filterBouquetServices = new HashSet<>();
-        for (BouquetService bouquetService : flowerStore.getBouquetServices()) {
-            if (bouquetService.rangePrice(minPrice, maxPrice) && bouquetService.rangeColors(colors)
-                    && bouquetService.rangeFlowers(flowers) && bouquetService.rangeStemSize(stemSizes)) {
-                filterBouquetServices.add(bouquetService);
+    @NotNull
+    public Set<Bouquet> assortment(double minPrice, double maxPrice, Color[] colors, FlowerType[] flowers, StemSize[] stemSizes) {
+        Set<Bouquet> filterBouquetServices = new HashSet<>();
+        BouquetService bouquetService = new BouquetService();
+        for (Bouquet bouquet : flowerStore.getBouquets()) {
+            if (bouquetService.rangePrice(minPrice, maxPrice, bouquet) && bouquetService.rangeColors(colors, bouquet)
+                    && bouquetService.rangeFlowers(flowers, bouquet) && bouquetService.rangeStemSize(stemSizes, bouquet)) {
+                filterBouquetServices.add(bouquet);
             }
         }
         return filterBouquetServices;
     }
 
-    public Set<BouquetService> assortment(double minPrice, double maxPrice, Color[] colors) {
+    @NotNull
+    public Set<Bouquet> assortment(double minPrice, double maxPrice, Color[] colors) {
         return assortment(minPrice, maxPrice, colors, null, null);
     }
 
-    public Set<BouquetService> assortment(double minPrice, double maxPrice, FlowerType[] types) {
+    @NotNull
+    public Set<Bouquet> assortment(double minPrice, double maxPrice, FlowerType[] types) {
         return assortment(minPrice, maxPrice, null, types, null);
     }
 
-    public Set<BouquetService> assortment(Color[] colors, FlowerType[] types) {
+    @NotNull
+    public Set<Bouquet> assortment(Color[] colors, FlowerType[] types) {
         return assortment(0, Double.MAX_VALUE, colors, types, null);
     }
 
-    public Set<BouquetService> assortment(double minPrice, double maxPrice) {
+    @NotNull
+    public Set<Bouquet> assortment(double minPrice, double maxPrice) {
         return assortment(minPrice, maxPrice, null, null, null);
     }
 
-    public Set<BouquetService> assortment(Color[] colors) {
+    @NotNull
+    public Set<Bouquet> assortment(Color[] colors) {
         return assortment(0, Double.MAX_VALUE, colors, null, null);
     }
 
-    public Set<BouquetService> assortment(StemSize[] stemSizes) {
+    @NotNull
+    public Set<Bouquet> assortment(StemSize[] stemSizes) {
         return assortment(0, Double.MAX_VALUE, null, null, stemSizes);
     }
 
-    public Set<BouquetService> assortment(FlowerType[] types) {
+    @NotNull
+    public Set<Bouquet> assortment(FlowerType[] types) {
         return assortment(0, Double.MAX_VALUE, null, types, null);
+    }
+
+    public FlowerStore getFlowerStore() {
+        return flowerStore;
     }
 }

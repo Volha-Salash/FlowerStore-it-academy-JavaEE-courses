@@ -11,19 +11,19 @@ import java.util.Set;
 public interface CreatorOfBouquets {
 
 
-    boolean rangeFlowers(FlowerType[] wantedTypes);
+    boolean rangeFlowers(FlowerType[] wantedTypes, Bouquet bouquet);
 
-    boolean rangeColors(Color[] wantedColors);
+    boolean rangeColors(Color[] wantedColors, Bouquet bouquet);
 
-    boolean rangeStemSize(StemSize[] wantedStemSize);
+    boolean rangeStemSize(StemSize[] wantedStemSize, Bouquet bouquet);
 
-    boolean rangePrice(double minPrice, double maxPrice);
+    boolean rangePrice(double minPrice, double maxPrice, Bouquet bouquet);
 
     double price(Bouquet bouquet);
 
-    Set<Color> getColors();
+    Set<Color> getColors(Bouquet bouquet);
 
-    Set<FlowerType> getTypes();
+    Set<FlowerType> getTypes(Bouquet bouquet);
 
-    Set<StemSize> getStemSize();
+    Set<StemSize> getStemSize(Bouquet bouquet);
 }

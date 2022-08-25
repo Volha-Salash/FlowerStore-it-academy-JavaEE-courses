@@ -2,6 +2,7 @@ package smallflowerstore.service;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.jetbrains.annotations.NotNull;
 import smallflowerstore.model.enums.Color;
 import smallflowerstore.model.enums.FlowerType;
 import smallflowerstore.model.enums.StemSize;
@@ -11,9 +12,11 @@ import smallflowerstore.model.shop.Packaging;
 import smallflowerstore.service.interfaces.CreatorOfBouquets;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import static java.lang.System.out;
 import static smallflowerstore.model.enums.StemSize.*;
 
 
@@ -29,8 +32,8 @@ public class BouquetService implements CreatorOfBouquets {
      */
 
     @Override
-    public boolean rangeFlowers(FlowerType[] wantedTypes) {
-        Set<FlowerType> repositoryTypes = getTypes();
+    public boolean rangeFlowers(FlowerType[] wantedTypes, Bouquet bouquet) {
+        Set<FlowerType> repositoryTypes = getTypes(bouquet);
         if (wantedTypes == null) {
             return true;
         }
@@ -50,8 +53,8 @@ public class BouquetService implements CreatorOfBouquets {
      */
 
     @Override
-    public boolean rangeColors(Color[] wantedColors) {
-        Set<Color> repositoryColors = getColors();
+    public boolean rangeColors(Color[] wantedColors, Bouquet bouquet) {
+        Set<Color> repositoryColors = getColors(bouquet);
         if (wantedColors == null) {
             return true;
         }
@@ -70,8 +73,8 @@ public class BouquetService implements CreatorOfBouquets {
      * @return true is satisfies criteria, false otherwise
      */
     @Override
-    public boolean rangeStemSize(StemSize[] wantedStemSize) {
-        Set<StemSize> repositoryStemSize = getStemSize();
+    public boolean rangeStemSize(StemSize[] wantedStemSize, Bouquet bouquet) {
+        Set<StemSize> repositoryStemSize = getStemSize(bouquet);
         if (wantedStemSize == null) {
             return true;
         }
@@ -112,8 +115,8 @@ public class BouquetService implements CreatorOfBouquets {
      * @return true is satisfies criteria, false otherwise
      */
     @Override
-    public boolean rangePrice(double minPrice, double maxPrice) {
-        double price = price(new Bouquet());
+    public boolean rangePrice(double minPrice, double maxPrice, Bouquet bouquet) {
+        double price = price(bouquet);
         return minPrice <= price && price <= maxPrice;
     }
 
@@ -127,18 +130,31 @@ public class BouquetService implements CreatorOfBouquets {
     }
 
     @Override
-    public Set<Color> getColors() {
-        return null;
+    public Set<Color> getColors(Bouquet bouquet) {
+        Set<Color> colors = new HashSet<>();
+        for (Packaging pack : bouquet.getPackagings()) {
+            colors.add(pack.getColor());
+        }
+        return colors;
     }
 
     @Override
-    public Set<FlowerType> getTypes() {
-        return null;
+    @NotNull
+    public Set<FlowerType> getTypes(Bouquet bouquet) {
+        Set<FlowerType> types = new HashSet<>();
+        for (Packaging pack : bouquet.getPackagings()) {
+            types.add(pack.getType());
+        }
+        return types;
     }
 
+    @NotNull
     @Override
-    public Set<StemSize> getStemSize() {
-        return null;
+    public Set<StemSize> getStemSize(Bouquet bouquet) {
+        Set<StemSize> stemSizes = new HashSet<>();
+        for (Packaging flower : bouquet.getPackagings()) {
+            stemSizes.add(flower.getStemSize());
+        }
+        return stemSizes;
     }
-
 }

@@ -3,10 +3,7 @@ package smallflowerstore.model;
 public abstract class ProductFlowersStore {
 
     String title;
-
-    protected ProductFlowersStore() {
-
-    }
+    double price;
 
     public String getTitle() {
         return title;
@@ -17,7 +14,7 @@ public abstract class ProductFlowersStore {
     }
 
     public double price() {
-        return price();
+        return price;
     }
 
 }
