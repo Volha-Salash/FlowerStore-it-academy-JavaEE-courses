@@ -17,7 +17,8 @@ import smallflowerstore.service.PriceService;
 class PriceServiceTest {
 
     PriceService price;
-    ProductFlowersStore peony, bouquet;
+    ProductFlowersStore peony;
+    ProductFlowersStore bouquet;
     BouquetService bouquetService;
 
     @BeforeEach

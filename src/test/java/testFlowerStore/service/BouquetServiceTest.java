@@ -18,7 +18,10 @@ import java.util.function.Supplier;
 
 class BouquetServiceTest {
     Bouquet bouquet;
-    Packaging peonyPack, hudrangeaPack, rosePack;
+    Packaging peonyPack;
+    Packaging hudrangeaPack;
+    Packaging rosePack;
+
     List<Flower> flowers = new ArrayList<>();
     BouquetService bouquetService;
 

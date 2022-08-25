@@ -52,18 +52,18 @@ class FlowerStoreServiceTest {
     @Test
     @DisplayName("assertEquals addBouquet")
     void addBouquetTest() {
-        Bouquet new_bouquetService = new Bouquet();
+        Bouquet newBouquetService = new Bouquet();
 
         Set<Bouquet> bouquets = flowerStoreService.getFlowerStore().getBouquets();
         Assertions.assertEquals(4, bouquets.size());
-        assert (!bouquets.contains(new_bouquetService));
+        assert (!bouquets.contains(newBouquetService));
 
-        flowerStoreService.getFlowerStore().addBouquet(new_bouquetService);
+        flowerStoreService.getFlowerStore().addBouquet(newBouquetService);
         bouquets = flowerStoreService.getFlowerStore().getBouquets();
         Assertions.assertEquals(5, bouquets.size());
-        assert (bouquets.contains(new_bouquetService));
+        assert (bouquets.contains(newBouquetService));
 
-        flowerStoreService.getFlowerStore().addBouquet(new_bouquetService);
+        flowerStoreService.getFlowerStore().addBouquet(newBouquetService);
         bouquets = flowerStoreService.getFlowerStore().getBouquets();
         Assertions.assertEquals(5, bouquets.size());
     }
